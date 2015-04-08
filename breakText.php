@@ -8,10 +8,10 @@ function breakText($t,$n)
 	
 	foreach($words as $word)
 	{
-		$count += strlen(' ' . $word);
+		$count += ($count)?strlen(' ' . $word):strlen($word);
 		
 		if($count < $n)
-			$r .= ' ' . $word;
+			$r .= ($count == strlen($word))?$word:' ' . $word;
 		else
 			break;
 		
